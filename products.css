@@ -1,0 +1,14 @@
+*{
+
+}
+.listproduct{
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+
+}
+.item{
+    width: 50px;
+}
+img{
+    width: 30px;
+}

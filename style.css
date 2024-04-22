@@ -1,0 +1,719 @@
+:root{
+    --main_color:  grey;
+    --nav-color: lightssgrey;
+    --hover-color:purple  ; 
+    --text-color: #1a1a1a;
+    --black: whitesmoke;
+    --card-color: #c0dbea
+
+}
+*{
+    color: black;
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none; 
+    text-decoration: none;
+    text-transform: capitalize;/* i like this property*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;/*the browser choose the font that is available on the device*/
+    transition:all 0.5s ease-in-out ;
+}
+
+html{
+    font-size: 62.5%; /*10px*/
+    overflow-x: hidden;
+}
+body{
+    background-color: var(--bg-color);
+}
+section{
+    padding: 2rem 7%;
+}
+/*here we have the button to command an order, the property of the button*/
+.btn{
+    display: inline-block;
+     text-align: center;
+    background-color: var(--main_color);
+    color: #fff;
+    font-size:1.7rem;
+    padding:0.8rem 2.5rem;
+    margin-top: 2rem;
+    cursor:pointer;
+
+}
+.btn:hover{
+    letter-spacing: 0.2rem;
+
+}
+/* the title for the cake section*/
+.title{
+    text-shadow: 2px 2px 0 var(--card-color),  -2px -2px 0 var(--card-color) ,  -2px 2px 0 var(--card-color),  2px -2px 0 var(--card-color);
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding: 3.5rem 0 ;
+    font-size: 4rem;
+}
+.title span{
+    color: var(--main_color);
+}
+.header{
+    -webkit-backdrop-filter: blur(15px); /* assure la compatibilité avec safari */
+    backdrop-filter: blur(15px); 
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1.5rem  7% ; /*the first ont is the padding of the top and bottom and the second one fot left 
+    and right rem=route element*/
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 16vh;
+    transition: 0.3s;
+    z-index: 1000;
+}
+.header .logo img{
+    height: 10rem;
+    border-radius: 50%;
+    width: 70px
+}
+.header .navbar{ 
+    position: sticky;
+    top: 0;
+    left:0;
+    font-weight:700;
+}
+.header .navbar ul{
+    display:flex;
+    list-style: none;
+}
+.header .navbar li  a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1a1a1a;
+    display: block;
+    font-size: 1.0rem;
+    margin: 0 1rem ;
+    transition: 0.3s ease;
+    
+}
+ 
+.header .navbar li a:hover {
+    color: var(--hover-color);
+    border-top: 0.3rem solid var(--hover-color);
+    border-bottom: 0.3rem solid var(--hover-color);
+    padding-top: 0.5 rem;
+    padding-bottom: 0.5 rem;
+    border-radius: 4px;
+}
+.header .navbar ul li .active{
+    color:#088178;
+}
+.header .navbar li a:hover .active::after{
+    content:"" ;
+    width: 30%;
+    height: 2px;
+    background:#088178 ;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+    color:#088178,;
+}
+.header .navbar .sousnav{
+    list-style: none;
+    display: none;
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    width: max-content;
+
+}
+.header .navbar .sousnav ul{
+    display: block;
+    margin: 10px;
+
+}
+.header .navbar .sousnav ul li{
+   width: 10px;
+   padding-bottom: 20px;
+  
+
+
+}
+.header .navbar .sousnav ul li a{
+    gap: 1rem; 
+
+}
+.header .navbar .has-sousnav{
+    position: relative;
+}
+.header .navbar .has-sousnav:hover .sousnav{
+    display:block;
+}
+.header .navbar .has-sousnav:hover .sousnav ul li{
+     
+    
+}
+
+ 
+#mobile{
+    display: flex;
+    align-items: center;
+}
+#mobile i{
+color: var(--text-color);
+font-size: 24px;
+padding-left: 20px;
+}
+#close{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--text-color)
+}
+.header .icons{
+    display: flex;
+    margin-left: 30px;
+    
+}
+.header .icons div{
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    transition: 0.5s ease;
+}
+.header #imgMenu{
+    width: 30px;
+}
+.menu{
+    display: none;
+}
+.header .icons div:hover{
+    color: black;
+    transform: translateY(-5px);
+}
+ 
+/*search box*/
+.header .search-from{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top:95%;
+    right:-250px;/*i do this because i don't want the search box to be seen at the beginning but just when i click on the
+    search icon*/
+    width:25rem;
+    border : solid 1px black;
+    height: 3.5rem;
+    background-color: #fff;
+    
+}
+ 
+.header .search-from input{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    text-transform: none;
+
+}
+.header .search-from label{
+    font-size:2rem;
+    color: var(--black);
+    padding-right: 1.3rem;
+    cursor:pointer;
+
+}
+.header .search-from label:hover{
+    color:var(--main_color);
+}
+/*cart section*/
+.header .cart-items-container{
+    position: absolute;
+    top:100%;
+    right: -100%;
+    width:35rem;
+    background-color: #fff;
+    height: 80vh;
+    border: solid 1px black;
+    padding: 0.8rem;
+}
+.header .cart-items-container .cart-item{
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0;
+   /* border: solid 1px black;*/
+    position: relative;
+    gap: 1rem;
+
+}
+.header .cart-items-container  a{
+    width: 100%;
+}
+.header .cart-items-container .cart-item img{
+    width:7rem;
+}
+.header .cart-items-container .cart-item span{
+    position: absolute;
+    top:5%;
+    right: 4%;
+    font-size: 2rem;
+    color: var(--black);
+    cursor: pointer;
+}
+.header .cart-items-container .cart-item span:hover{
+    color: red;
+
+}
+.header .cart-items-container .cart-item .content h3{
+    font-size: 1.5rem;
+    color: var(--black);
+    padding-bottom: 0.8rem;
+}
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.3rem;
+    color: var(--nav-color); 
+}
+/*Home sectiom*/
+/*.home{
+    display: flex;
+    align-items: center;
+    min-height:90vh ;
+    margin-top: 10vh;
+    background-color:var(--bg-color);
+    background-image: url(Images/layercake-removebg-preview.png); 
+    background-repeat: no-repeat;
+    background-size: 80vh;
+    background-position: right;
+ 
+}*/
+
+/* the carousel css begin here*/
+.carousel{
+    width: 200vh;
+    height: 100vh;
+    overflow: hidden;
+   
+    position: relative;
+     
+}
+@media screen and (max-width:733px) {
+    .carousel{
+        width: 100%;
+    }
+    .carousel .list .item .img{
+        width: 100%;
+    }
+   
+}
+.carousel .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+
+}
+.carousel .list .item .img{
+    width: 500px;
+    height: 500px;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+
+}
+.carousel .list .item  img{
+   width: 100%;
+   height: 100%;
+   
+   object-fit:cover; 
+}
+.carousel .list .item .content{
+    position: absolute;
+    max-width: 80%; /*width for smaller screen*/
+    left: 50%;
+    top:20%;
+    width: 1150px;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: var(--text-color);
+    text-shadow: 0 5px 15px wheat;
+
+}
+.carousel .list .item .content #name{
+    font-weight: bold;
+    size: 50px;
+
+}
+.carousel .list .item .content .buttons{
+    display: grid;
+    grid-template-columns: repeat(2,130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+
+}
+.carousel .list .item .content button{
+    border: none;
+    background-color: whitesmoke;
+    letter-spacing: 4px;
+
+}
+
+/* Thumbnail*/
+.thumbnail{
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: max-content;
+    z-index: 150;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 200%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 30px;
+
+}
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+        
+}
+
+/*fleches*/
+.fleche{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    width: 300px;
+    display: flex;
+    gap: 20px;/* for creating space between the two arrows*/
+    align-items: center;
+}
+.fleche button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: large;
+    transition: 1s;
+}
+.fleche button:hover{
+    background-color:purple;
+    color: #fff;
+}
+
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+.carousel .list .item:nth-child(1) #name{
+    animation-delay:1.4s;
+}
+.carousel .list .item:nth-child(1) #name,
+.carousel .list .item:nth-child(1) #desc,
+.carousel .list .item:nth-child(1) .buttons{
+    transform: translateX(50px);
+    opacity: 0;
+    filter: blur(20px);
+    animation: showcontent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showcontent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+/* the slider carousel ends here*/
+/*.home .hero{
+    width:60rem;
+    color: white
+}
+.home .hero h3{
+   font-size: 6rem;
+    text-transform: uppercase;
+    color: black;
+}
+.home .hero h3 span{
+    color:var(--main_color);
+}*/
+ /*.home .hero p{
+    font-size: 2rem;
+   margin-right: 70vh; 
+    font-weight: lighter;
+    line-height: 3.2rem;
+    padding: 1rem 0;
+    color: black;
+} */
+
+/* cake section*/
+.wrapper{
+    display: grid;
+    /* i use auto-fit here so that the images can be responsive, that means the images will adapt in function
+    of the size of thescreen the minmax notation here reprensent the minimum and the maximun size*/
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+}
+#cakes .wrapper .cake-card{
+    background-color: var(--card-color);
+    padding:  3rem 2rem;
+    text-align: center;
+    transform-origin: top center;
+}
+#cakes .wrapper .cake-card img:hover{
+    transform: scaleY(1.1);/* pour que l#image puisse grandir quand on hover limage*/
+    background-color: var(--black);
+}
+#cakes .wrapper .cake-card:hover *:not(a){
+    color: var(--main_color);
+}
+#cakes .wrapper .cake-card img{
+    width: 100%;
+     
+}
+#cakes .wrapper .cake-card h3{
+       
+    color:white;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+#cakes .wrapper .cake-card .price{
+    color:white;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+/*banner*/
+.banner{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    background-image:url(images/pexels-karolina-grabowska-4046718.jpg)  ;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px bisque;
+    margin-top: 10%;
+}
+.banner .img{
+    flex: 1 1 400px;
+}
+.banner .img img{
+    width: 70%;  
+}
+.banner .content{
+    flex: 1 1 400px;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+.banner .content h3{
+    color: goldenrod;
+
+}
+
+/* contact form*/
+#contact{
+    margin-top: 100px;
+    
+    
+    
+}
+ 
+#contact h1{
+    text-align: center;
+    margin-top: 50px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 1px rgba(161,109,14,1);
+    border: 2px solid purple;
+    margin-bottom: 50px;
+}
+.form-group{
+    display: flex; 
+ }
+#contact input{
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid;
+}
+#contact input::placeholder{
+     color: black;
+}
+.form-group #comment{
+    position: absolute;
+    right: 10%;
+    bottom: 120%;
+    background-color: purple;
+    margin-bottom: 20px;
+}
+#messagebtn{
+    text-align: center;
+}
+#messagebtn button{
+    width: 200px;
+    height: 30px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border: 2px solid;
+}
+
+
+#about{
+    margin-top: 50px;
+}
+
+.about .container{
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+    flex-wrap: wrap;
+}
+.about .container .img{
+    flex: 1 1 45rem;
+}
+.about .container .img img{
+    width: 100%;
+}
+.about .container .content{
+    flex: 1 1 45rem;
+    padding:  2rem;
+}
+.about .container .content h3{}
+
+#footer{
+    padding: 100px 0 20px;
+    background:purple;
+}
+.footer-row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-left,.footer-right{
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.footer-right{
+    text-align: right;
+}
+.footer-right p{
+    line-height: 40px;
+}
+.footer-left,.footer-right i{
+    font-size: 20px;
+    color: #009688;
+    margin: 10px;
+}
+
+
+
+
+@media screen and (max-width:770px){
+    .logo{
+        width: 20%;
+
+    }
+    
+    .menu{
+        display: flex;
+        width: 40px;
+        right: -100%;
+    } 
+    .icons{
+        position: absolute;
+        right: 0%;
+        z-index: 3;
+        cursor: pointer;
+    }
+ 
+    
+    .navbar{
+        display: none;
+        width:120px;
+        height: 100vh;
+        position: fixed;
+        background-color: aqua;
+        opacity: 20%;
+        top: 30px;   
+        z-index:100;
+        transition: 0.5s;
+
+    }
+    .navbar ul {
+        margin-top: 100px;
+    }
+    .navbar ul li{
+        margin: 50px 20px;
+        
+    }
+    .navbar ul li a{
+        text-transform: uppercase; 
+        color:black;
+        margin: 0.1rem;
+    }
+   
+}
+
+@media screen and (max-width:550px){
+    .icons{
+        width: 10%;
+    }
+   
+
+}
+@media screen and (max-width:770px){
+    .banner-text h1{
+        font-size: 44px;
+        }
+    .banner-btn a{
+        display: block;
+        margin: 20px auto;
+    }
+    #logo{
+        font-size: 15px;
+    }
+}
+
+/*characteristique*/
+ 
